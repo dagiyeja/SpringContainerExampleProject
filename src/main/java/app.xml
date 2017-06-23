@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Xml에서 생성한 것만 쓸 수있게. new한 것은 쓸 수 없다. new를 쓰면, 의존성이 강한 프로그램이 되므로  -->
+	<bean id="daum" class="com.sist.daum.DaumManager" p:key="563f491482a4ce208f7725e70acb21a9"/>
+	<bean id="mfc" class="com.sist.feel.MovieFeelClass"/>
+	<bean id="rm" class="com.sist.r.RManager"/>
+	<bean id="mc" class="com.sist.container.MainClass" p:dm-ref="daum" p:mfc-ref="mfc" p:rm-ref="rm"/>
+</beans>
